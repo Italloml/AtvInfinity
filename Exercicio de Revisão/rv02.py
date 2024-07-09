@@ -4,14 +4,19 @@
 soma = 0
 accept = True
 contador = 0
-check = input("Deseja continuar? s - sim // n - não")
-while accept: 
-    if check == 's' or contador > 5:
+check = input("Deseja continuar? s - sim // n - não: ")  
+while accept:
+    if check == 's' and contador != 5:
         numero = int(input("Informe: ")) 
         soma += numero
         contador += 1
-    else:
-        accept = False
+    elif contador >= 5:
+        check = input("Deseja continuar? s - sim // n - não: ")
+        if check == 'n':
+            accept = False
+        else:
+            continue
+       
 
 print(f"resultado da soma de numeros: {soma}")
 
