@@ -1,0 +1,147 @@
+/* Definindo Variáveis CSS no :root */
+:root {
+    --font-size-small: 14px;
+    --font-size-medium: 18px;
+    --font-size-large: 22px;
+
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: var(--spacing-medium);
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--font-size-large);
+}
+
+p {
+    font-size: var(--font-size-medium);
+    margin-top: var(--spacing-small);
+}
+
+.content {
+    padding: var(--spacing-medium);
+    background-color: white;
+    margin: var(--spacing-small) 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--spacing-small);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: var(--spacing-small);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Query para telas pequenas (menos de 600px) */
+@media (max-width: 600px) {
+    :root {
+        --font-size-small: 12px;
+        --font-size-medium: 16px;
+        --font-size-large: 20px;
+
+        --spacing-small: 5px;
+        --spacing-medium: 15px;
+        --spacing-large: 25px;
+    }
+
+    h1 {
+        font-size: var(--font-size-medium);
+    }
+
+    p {
+        font-size: var(--font-size-small);
+    }
+
+    .content {
+        padding: var(--spacing-small);
+        margin: var(--spacing-small) 0;
+    }
+
+    h2 {
+        font-size: var(--font-size-small);
+    }
+}
+
+/* Media Query para telas médias (600px a 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    :root {
+        --font-size-small: 16px;
+        --font-size-medium: 18px;
+        --font-size-large: 22px;
+
+        --spacing-small: 10px;
+        --spacing-medium: 20px;
+        --spacing-large: 30px;
+    }
+
+    h1 {
+        font-size: var(--font-size-large);
+    }
+
+    p {
+        font-size: var(--font-size-medium);
+    }
+
+    .content {
+        padding: var(--spacing-medium);
+    }
+
+    h2 {
+        font-size: var(--font-size-medium);
+    }
+}
+
+/* Media Query para telas grandes (acima de 1024px) */
+@media (min-width: 1024px) {
+    :root {
+        --font-size-small: 18px;
+        --font-size-medium: 22px;
+        --font-size-large: 26px;
+
+        --spacing-small: 15px;
+        --spacing-medium: 25px;
+        --spacing-large: 35px;
+    }
+
+    h1 {
+        font-size: var(--font-size-large);
+    }
+
+    p {
+        font-size: var(--font-size-medium);
+    }
+
+    .content {
+        padding: var(--spacing-medium);
+    }
+
+    h2 {
+        font-size: var(--font-size-large);
+    }
+}
