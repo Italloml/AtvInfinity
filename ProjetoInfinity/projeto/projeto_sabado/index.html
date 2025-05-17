@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 - DOM | DFS-319</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="in_logo.png" alt="Logo Infinity">
+            <div class="titulo-container">
+                <h1>Infinity Tasks</h1>
+                <p>Organize seus estudos!</p>
+            </div>
+        </header>
+
+        <form class="form-tarefa" id="form-tarefa">
+            <input
+                type="text"
+                id="input-tarefa"
+                placeholder="Adicione um novo assunto..."
+                required
+            >
+            <button id="btnCaptura" type="submit">Adicionar</button>
+            
+        </form>
+
+        <ul class="lista-tarefas" id="lista-tarefas">
+            <li class="sem-tarefas" id="sem-tarefas">Nenhuma tarefa adicionada</li>
+        </ul>
+
+        <div class="contador-tarefas" id="contador-tarefas">
+            Total de Tarefas: 0
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
