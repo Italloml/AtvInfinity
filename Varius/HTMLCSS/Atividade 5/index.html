@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+    <script>
+        let listaTarefas = [];
+
+while (true) {
+    let esc = prompt(
+        "Informe uma das opções:\n" +
+        "1 - Adicionar tarefas\n" +
+        "2 - Listar Tarefas\n" +
+        "3 - Remover Tarefas\n" +
+        "4 - Concluir Tarefas\n" +
+        "5 - Sair"
+    );
+
+    if (esc === "1") {
+        let tarefa = prompt("Digite a tarefa que deseja adicionar:");
+        listaTarefas.push(tarefa);
+        console.log("Tarefa adicionada!");
+
+    } else if (esc === "2") {
+        if (listaTarefas.length === 0) {
+            console.log("Não há tarefas na lista.");
+        } else {
+            console.log("Lista de tarefas:");
+            for (let i = 0; i < listaTarefas.length; i++) {
+                console.log(`${i}: ${listaTarefas[i]}`);
+            }
+        }
+
+    } else if (esc === "3") {
+        let indNumero = parseInt(prompt("Informe a posição que deseja remover:"));
+        if (indNumero >= 0 && indNumero < listaTarefas.length) {
+            listaTarefas.splice(indNumero, 1);
+            console.log("Item excluído com sucesso.");
+        } else {
+            console.log("Índice inválido!");
+        }
+
+    } else if (esc === "4") {
+        let indiceConcluir = parseInt(prompt("Digite o índice da tarefa que deseja marcar como concluída:"));
+        if (indiceConcluir >= 0 && indiceConcluir < listaTarefas.length) {
+            listaTarefas[indiceConcluir] = "✅ " + listaTarefas[indiceConcluir];
+            console.log("Tarefa marcada como concluída.");
+        } else {
+            console.log("Índice inválido.");
+        }
+
+    } else if (esc === "5") {
+        console.log("Encerrando o gerenciador de tarefas...");
+        break;
+
+    } else {
+        console.log("Opção inválida. Tente novamente.");
+    }
+}
+
+    </script>
+</body>
+</html>
