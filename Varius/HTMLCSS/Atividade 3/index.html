@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+    <script>
+        let status = prompt("Informe se estar registrado (sim / não)")
+        let idade = parseInt(prompt("Informe a idade: "))
+        let verificador = idade >= 18 ? "maior de Idade" : "Menor de idade"
+        console.log(verificador)
+
+        switch(status.toLocaleLowerCase()) {
+            case "sim": // registrado
+                console.log("Ok, registro feito!")
+                break
+            case "não": // não registrado
+                console.log("Não estar na base do sistema, por favor, complete o cadastro")
+                break
+            default:
+                console.log("Desconhecido")
+                break
+        }
+    </script>
+</body>
+</html>
