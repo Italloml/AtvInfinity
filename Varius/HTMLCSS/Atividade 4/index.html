@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+    <script>
+        
+        let nomes = []
+        while (true) {
+            let informes = prompt("Informe um nome: ")
+            
+            if(informes.toLocaleLowerCase() == "sair") {
+                break
+            }
+
+            nomes.push(informes)
+        }
+
+        console.log("Listas de nomes: ")
+        for(let i=0; i<nomes.length; i++) {
+            console.log(`${i + 1}: ${nomes[i]}`)
+        }
+
+        console.log("Mensagens personalizadas:");
+        for (let nome of nomes) {
+            console.log(`Bem-vindo(a), ${nome}!`);
+        }
+    </script>
+</body>
+</html>
