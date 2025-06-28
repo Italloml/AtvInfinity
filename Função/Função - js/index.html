@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função</title>
+</head>
+<body>
+    <script>
+        // Lista de tarefas
+    let tarefas = [];
+    const adicionarTarefa = function(tarefa) {
+        tarefas.push({ descricao: tarefa, concluida: false })
+        console.log(`Tarefa adicionada: "${tarefa}"`)
+    }
+
+    const listarTarefas = () => {
+        console.log("\n📋 Lista de Tarefas:");
+        if (tarefas.length === 0) {
+            console.log("Nenhuma tarefa cadastrada.");
+        } else {
+            tarefas.forEach((t, i) => {
+                console.log(`${i}: [${t.concluida ? "✔" : " "}] ${t.descricao}`);
+            });
+        }
+    };
+
+    function executarOperacao(callback) {
+        callback();
+    }
+
+    function removerTarefa() {
+        const index = prompt("Digite o índice da tarefa a remover:");
+        if (tarefas[index]) {
+            console.log(`Tarefa removida: "${tarefas[index].descricao}"`);
+            tarefas.splice(index, 1);
+        } else {
+            console.log("Índice inválido.");
+        }
+    }
+
+    function atualizarTarefa() {
+        const index = prompt("Digite o índice da tarefa a atualizar:");
+        if (tarefas[index]) {
+            const novaDescricao = prompt("Digite a nova descrição:");
+            tarefas[index].descricao = novaDescricao;
+            console.log("Tarefa atualizada.");
+        } else {
+            console.log("Índice inválido.");
+        }
+    }
+
+    function concluirTarefa() {
+        const index = prompt("Digite o índice da tarefa a concluir:");
+        if (tarefas[index]) {
+            tarefas[index].concluida = true;
+            console.log("Tarefa marcada como concluída.");
+        } else {
+            console.log("Índice inválido.");
+        }
+    }
+
+    let opcao;
+    do {
+        opcao = prompt(
+            "Escolha uma ação:\n1 - Adicionar tarefa\n2 - Listar tarefas\n3 - Remover tarefa\n4 - Atualizar tarefa\n5 - Concluir tarefa\n0 - Sair"
+        );
+
+        switch (opcao) {
+            case "1":
+                const novaTarefa = prompt("Digite a nova tarefa:");
+                adicionarTarefa(novaTarefa);
+                break;
+            case "2":
+                listarTarefas();
+                break;
+            case "3":
+                executarOperacao(removerTarefa);
+                break;
+            case "4":
+                executarOperacao(atualizarTarefa);
+                break;
+            case "5":
+                executarOperacao(concluirTarefa);
+                break;
+            case "0":
+                console.log("Encerrando...");
+                break;
+            default:
+                console.log("Opção inválida.");
+        }
+
+    } while (opcao !== "0");
+
+    </script>
+</body>
+</html>
