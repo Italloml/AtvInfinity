@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+</head>
+<body>
+    <script>
+        let nomes = [];
+
+        function exibirMenu() {
+        return prompt(
+            "Escolha uma operação:\n" +
+            "1 - Adicionar nome\n" +
+            "2 - Filtrar nomes por letra inicial\n" +
+            "3 - Buscar nome exato\n" +
+            "4 - Transformar todos os nomes em MAIÚSCULAS\n" +
+            "5 - Verificar se todos os nomes têm mais de 3 caracteres\n" +
+            "6 - Sair"
+        );
+    }
+    let continuar = true;
+    while (continuar) {
+    const opcao = exibirMenu();
+
+    switch (opcao) {
+        case "1":
+            const nomeAdicionado = prompt("Digite o nome a ser adicionado:");
+            nomes.push(nomeAdicionado);
+            console.log("Lista atualizada:", nomes);
+            break;
+
+        case "2":
+            const letra = prompt("Filtrar nomes que começam com qual letra?");
+            const filtrados = nomes.filter(nome => nome.charAt(0).toLowerCase() === letra.toLowerCase());
+            console.log("Nomes filtrados:", filtrados);
+           break;
+
+        case "3":
+            const busca = prompt("Digite o nome que deseja buscar:");
+            const encontrado = nomes.find(nome => nome === busca);
+            if (encontrado) {
+                console.log("Nome encontrado:", encontrado);
+            } else {
+                console.log("Nome não encontrado.");
+            }
+            break;
+
+        case "4":
+            const maiusculos = nomes.map(nome => nome.toUpperCase());
+            console.log("Nomes em maiúsculas:", maiusculos);
+            break;
+
+        case "5":
+            const todosMaiorQue3 = nomes.every(nome => nome.length > 3);
+            console.log("Todos os nomes têm mais de 3 caracteres?", todosMaiorQue3);
+            break;
+
+        case "6":
+            continuar = false;
+            console.log("Encerrando o programa.");
+        break;
+
+        default:
+        console.log("Opção inválida. Tente novamente.");
+    }
+}
+
+    </script>
+</body>
+</html>
